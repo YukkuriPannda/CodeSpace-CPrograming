@@ -2,31 +2,23 @@
 
 typedef struct
 {
-    int id;
-    char name[30];
-    char reason[50];
-} PersonCard;
+    char MagickNumber[2];
+    int  width;
+    int  height;
+    int  Maxval;
+    char Name[50]
+} Header;
 int main(void)
 {
-    PersonCard personCard = {
-        0,"",""
-    };
-    Gate(&personCard);
-    Disp(personCard);
+    
+    int array[256][256];
+
     return 0;
 }
 
-void Gate(PersonCard *personCard_ip){
-    printf("学籍、職員番号を入力\n");
-    scanf("%d",&personCard_ip->id);
-    
-    printf("名前を入力\n");
-    scanf("%s",&personCard_ip->name);
-
-    printf("入校理由を入力\n");
-    scanf("%s",&personCard_ip->reason);
+void SavePGM(Header Header,int array_img[][]){
+    FILE *fp = fopen(Header.Name,"w");
 }
-void Disp(PersonCard personCard_in){
-    printf("id:%d \nname:%s \nreason:%s \n"
-        ,personCard_in.id,personCard_in.name,personCard_in.reason);
+void GenerateCircle(int *array,int size[2]){
+    
 }
